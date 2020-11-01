@@ -6,12 +6,13 @@ print('Now tell me from where till where you want me to ask the squares.')
 
 fromm=int(input("From:"))
 till=int(input("Till:"))
+queslimit=int(input("How many questions do you want me to ask:"))
 score=0
 
 lis=[i for i in range(fromm,till+1)]
 
 k=0
-while k<10:
+while k<queslimit:
 	num=random.choice(lis)
 	ans=int(input(f"Tell the square of {num}:"))
 
@@ -20,16 +21,13 @@ while k<10:
 		score+=1
 		k+=1
 		print(f"Your score is {score}.\n")
-		print(f"{10-k} questions left.\n")
+		print(f"{queslimit-k} questions left.\n")
 
 	else:
 		print(f"Oops it's wrong! It is {num*num}\n")
 		print(f"Your score is {score}.\n")
 		k+=1
-		print(f"{10-k} questions left.\n")
+		print(f"{queslimit-k} questions left.\n")
 			
 
-print(f"You scored {score} out of 10!")
-
-
-
+print(f"You scored {score} out of {queslimit}!")
